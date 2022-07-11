@@ -20,9 +20,11 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # URL Reverse 기능
+    path('accounts/', include('accounts.urls')),
     path('blog1/', include('blog1.urls')),
     path('instagram/', include('instagram.urls')),
 ]
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
